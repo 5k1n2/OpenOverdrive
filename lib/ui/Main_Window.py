@@ -11,7 +11,7 @@
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
-
+from lib.ui.Second_Window import Second_Window
 
 class Ui_MainWindow(QMainWindow):
     def __init__(self):
@@ -20,6 +20,8 @@ class Ui_MainWindow(QMainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(997, 757)
+        with open("lib\\ui\\stylesheet.css", "r") as f:
+            self.setStyleSheet(f.read())
         self.setWindowTitle("Open Overdrive Pipeline")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -33,8 +35,8 @@ class Ui_MainWindow(QMainWindow):
         self.createbutton.clicked.connect(self.create_new_asset)
 
     def create_new_asset(self):
-        self.listView.addItem("test")
-        self.createbutton.setDisabled(False)
+        self.update_dialog = Second_Window("New Asset")
+        self.update_dialog.show()
 
 
 

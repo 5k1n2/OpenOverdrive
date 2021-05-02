@@ -17,3 +17,28 @@ QPushButton:pressed{
 QLabel{
 	border: 0px;
 }
+
+QLineEdit{
+
+	border: 1px solid rgb(221, 221, 221);
+}
+
+QComboBox {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 2px;
+    padding: 1px 18px 1px 3px;
+}
+
+QComboBox::down-arrow {
+	image: url(C://git//OpenOverdrive//icons//dropdown.png);
+
+}
+
+QComboBox::drop-down {
+
+}
+
+QCheckBox{
+
+	border: 0px;
+}
