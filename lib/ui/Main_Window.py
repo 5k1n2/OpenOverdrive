@@ -12,6 +12,7 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 from lib.ui.Second_Window import Second_Window
+from lib.ui.assetwidget import Assetwidget
 
 class Ui_MainWindow(QMainWindow):
     def __init__(self):
@@ -28,15 +29,41 @@ class Ui_MainWindow(QMainWindow):
         MainWindow.setCentralWidget(self.centralwidget)
         self.createbutton = QPushButton("Create", self.centralwidget)
         self.deletebutton = QPushButton("Delete", self.centralwidget)
-        self.listView = QListWidget(self.centralwidget)
         self.deletebutton.setGeometry(QRect(70, 340, 75, 23))
         self.createbutton.setGeometry(QRect(150, 340, 75, 23))
-        self.listView.setGeometry(QRect(70, 71, 256, 241))
         self.createbutton.clicked.connect(self.create_new_asset)
+        self.central_layout = QVBoxLayout()
+        self.centralwidget.setLayout(self.central_layout)
+
+        self.central_layout.addWidget(self.createbutton)
+        self.central_layout.addWidget(self.deletebutton)
+        self.setup_assetlist()
+        self.setup_assetlist()
+        self.setup_assetlist()
+        self.setup_assetlist()
+        self.setup_assetlist()
+        self.setup_assetlist()
 
     def create_new_asset(self):
         self.update_dialog = Second_Window("New Asset")
         self.update_dialog.show()
+
+    def setup_assetlist(self):
+        self.assetwidget = QWidget()
+        self.scroll_layout = QVBoxLayout()
+
+        self.widgetlist = QScrollArea()
+        self.widgetlist.setGeometry(QRect(300, 340, 75, 23))
+        self.widgetlist.setLayout(self.scroll_layout)
+        self.assetwidget = Assetwidget()
+        self.scroll_layout.addWidget(self.assetwidget)
+
+
+        self.assetwidget.setLayout(self.scroll_layout)
+        self.central_layout.addWidget(self.assetwidget)
+
+
+
 
 
 

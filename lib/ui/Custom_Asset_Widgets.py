@@ -34,6 +34,9 @@ class Text_Edit(QWidget):
         self.Text_Edit.setPlaceholderText(placeholder)
         self.main_layout.addWidget(self.Text_Edit, 1)
 
+    def get_Text(self):
+        return self.Text_Edit.text()
+
 
 class CustomCheckbox(QWidget):
     def __init__(self, label_text):

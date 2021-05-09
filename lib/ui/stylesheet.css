@@ -3,6 +3,10 @@ QWidget{
 	border: 1px solid rgb(241, 241, 241);
 }
 
+Assetwidget {
+    background-color: black;
+}
+
 QPushButton {
     background-color: white;
 	border: 1px solid rgb(241, 241, 241);
@@ -41,4 +45,8 @@ QComboBox::drop-down {
 QCheckBox{
 
 	border: 0px;
+}
+
+QListWidget{
+    border: 1px solid rgb(221, 221, 221);
 }

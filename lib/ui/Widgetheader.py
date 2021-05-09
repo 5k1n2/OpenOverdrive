@@ -11,6 +11,7 @@
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
+import sys
 
 
 class Widgetheader_ui(QMainWindow):
@@ -45,10 +46,17 @@ class Widgetheader_ui(QMainWindow):
 
 
 
-
         QMetaObject.connectSlotsByName(self)
     # setupUi
 
 
     # retranslateUi
 
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+
+    temp = Widgetheader_ui()
+    temp.show()
+
+    app.exec_()
+    sys.exit(0)
